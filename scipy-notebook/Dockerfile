@@ -65,6 +65,7 @@ RUN conda install --quiet --yes \
     'pickleshare=0.7.5' \
     'pluggy=0.9.0' \
     'ply=3.11' \
+    'mlxtend=0.10.0' \
     'ptyprocess=0.6.0' \
     'py=1.8.0' \
     'Pygments=2.3.1' \

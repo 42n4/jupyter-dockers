@@ -44,7 +44,7 @@ def test_uid_change(container):
     )
     # usermod is slow so give it some time
     c.wait(timeout=120)
-    assert 'uid=1010(jovyan)' in c.logs(stdout=True).decode('utf-8')
+    assert 'uid=1010(guest)' in c.logs(stdout=True).decode('utf-8')
 
 
 def test_gid_change(container):
@@ -57,8 +57,8 @@ def test_gid_change(container):
     )
     c.wait(timeout=10)
     logs = c.logs(stdout=True).decode('utf-8')
-    assert 'gid=110(jovyan)' in logs
-    assert 'groups=110(jovyan),100(users)' in logs
+    assert 'gid=110(guest)' in logs
+    assert 'groups=110(guest),100(users)' in logs
 
 
 def test_chown_extra(container):
