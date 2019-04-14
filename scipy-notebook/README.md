@@ -1,5 +1,9 @@
 [![docker pulls](https://img.shields.io/docker/pulls/jupyter/scipy-notebook.svg)](https://hub.docker.com/r/jupyter/scipy-notebook/) [![docker stars](https://img.shields.io/docker/stars/jupyter/scipy-notebook.svg)](https://hub.docker.com/r/jupyter/scipy-notebook/) [![image metadata](https://images.microbadger.com/badges/image/jupyter/scipy-notebook.svg)](https://microbadger.com/images/jupyter/scipy-notebook "jupyter/scipy-notebook image metadata")
 
+# Build
+docker build --rm -t 42n4/scipy-notebook .
+
+
 # Jupyter Notebook Scientific Python Stack
 
 Please visit the documentation site for help using and contributing to this image and others.
