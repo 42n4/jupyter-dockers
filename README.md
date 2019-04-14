@@ -3,6 +3,15 @@
 [![DockerHub badge](https://images.microbadger.com/badges/version/jupyter/base-notebook.svg)](https://microbadger.com/images/jupyter/base-notebook "Recent tag/version of jupyter/base-notebook")
 [![Binder badget](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyter/docker-stacks/master?filepath=README.ipynb "Launch a jupyter/base-notebook container on mybinder.org")
 
+# Run
+#### Examples 
+#### https://github.com/ipython-books/cookbook-2nd-code
+#### https://github.com/SkalskiP/ILearnDeepLearning.py
+docker run -it --rm -p 8888:8888 -p 4040:4040 -e NB_USER=$(whoami) -e NB_UID=$(id -u) -e NB_GID=$(id -g) -v $(pwd):/home/guest/workspace 42n4/all-spark-notebook
+
+#### Jupyter with the graphical gui
+docker run -it --rm -p 8888:8888 -p 4040:4040 -e JUPYTER_ENABLE_LAB=yes -e NB_USER=$(whoami) -e NB_UID=$(id -u) -e NB_GID=$(id -g)  -v $(pwd):/home/guest/work 42n4/all-spark-notebook
+
 # Build
 ### You can pull my docker with all python packages (about 0.5-1h with a good internet connection)
 ```
