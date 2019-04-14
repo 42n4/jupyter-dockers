@@ -14,11 +14,9 @@ RUN apt-get update && \
 
 USER $NB_UID
 
-#numpy=1.14.5
 #opencv-python=4.0.0.21
 #prometheus-client=0.3.1
 #tensorboard=1.10.0
-#tensorflow=1.10.0
 #    'nbconvert=5.4.1' \
 #    'nbformat=4.4.0' \
 #    'pyzmq=17.1.2' \
@@ -28,6 +26,9 @@ USER $NB_UID
 #    'more-itertools=7.0.0' \
 #    'Markdown=3.1' \
 #    'grpcio=1.19.0' \
+#    'pytorch-pretrained-bert=0.5.1' \
+#    'pytorch-cpu=1.0.1' \
+#    'pytorch=1.0.1' \
 
 # Install Python 3 packages
 # Remove pyqt and qt pulled in for matplotlib since we're only ever going to
@@ -60,6 +61,7 @@ RUN conda install --quiet --yes \
     'pandas-datareader=0.7.0' \
     'pandocfilters=1.4.2' \
     'parso=0.4.0' \
+    'ffmpeg=4.1.1' \
     'pathlib2=2.3.3' \
     'pexpect=4.7.0' \
     'pickleshare=0.7.5' \
