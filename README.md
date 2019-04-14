@@ -3,6 +3,41 @@
 [![DockerHub badge](https://images.microbadger.com/badges/version/jupyter/base-notebook.svg)](https://microbadger.com/images/jupyter/base-notebook "Recent tag/version of jupyter/base-notebook")
 [![Binder badget](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyter/docker-stacks/master?filepath=README.ipynb "Launch a jupyter/base-notebook container on mybinder.org")
 
+# Build
+### You can pull my docker with all python packages (about 0.5-1h with a good internet connection)
+```
+docker pull 42n4/all-spark-notebook   #pull my docker (about 7G in tar)
+```
+### or make it in five steps (about 1 hour on i7) - you can add your packages to Dockerfile:
+#### 1
+```
+git clone https://github.com/pwasiewi/jupyter-dockers
+cd jupyter-dockers/base-notebook
+docker build --rm -t 42n4/base-notebook .
+```
+#### 2
+```
+cd ../minimal-notebook
+docker build --rm -t 42n4/minimal-notebook .
+```
+#### 3
+```
+cd ../scipy-notebook
+docker build --rm -t 42n4/scipy-notebook .
+```
+#### 4
+```
+cd ../pyspark-notebook
+docker build --rm -t 42n4/pyspark-notebook .
+```
+#### 5
+```
+cd ../all-spark-notebook
+docker build --rm -t 42n4/all-spark-notebook .
+docker login                            #docker-hub-user-login and pass to hub.docker.com
+docker push 42n4/all-spark-notebook     #send to docker-hub-user/docker-name
+```
+
 # Jupyter Docker Stacks
 
 Jupyter Docker Stacks are a set of ready-to-run [Docker images](https://hub.docker.com/u/jupyter) containing Jupyter applications and interactive computing tools.
