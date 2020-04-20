@@ -30,105 +30,137 @@ USER $NB_UID
 #    'pytorch-cpu=1.0.1' \
 #    'pytorch=1.0.1' \
 
+#    'astor=0.8.1' \
+#    'cufflinks' \
+#    'ffmpeg=1.4*' \
+#    'graphviz=0.13.2' \
+#    'ipykernel=5.2.1' \
+#    'lesscpy=0.14.0' \
+#    'mlutils=0.1.0' \
+#    'mpl_toolkits' \
+#    'more_itertools=8.2.0' \
+#    'numba=0.49*' \
+#    'plotly-express' \
+#    'plydata' \
+#    'PyWavelets-1.1.1' \
+
+#  certifi                         2020.4.5.1-py37hc8dfbb8_0 --> 2019.11.28-py37hc8dfbb8_1
+#  jedi                                0.17.0-py37hc8dfbb8_0 --> 0.16.0-py37hc8dfbb8_1
+#  jinja2                                2.11.2-pyh9f0ad1d_0 --> 2.11.1-py_0
+#  parso                                  0.7.0-pyh9f0ad1d_0 --> 0.6.2-py_0
+#  prompt-toolkit                                 3.0.5-py_0 --> 3.0.4-py_0
+#  wcwidth                                0.1.9-pyh9f0ad1d_0 --> 0.1.8-pyh9f0ad1d_1
+
+
 # Install Python 3 packages
 # Remove pyqt and qt pulled in for matplotlib since we're only ever going to
 # use notebook-friendly backends in these images
 RUN conda install --quiet --yes \
+    'absl-py=0.9.0' \
+    'atomicwrites=1.3.0' \
+    'attrs=19.3.0' \
     'backcall=0.1.0' \
-    'bleach=3.1.0' \
-    'certifi=2019.3.9' \
+    'beautifulsoup4=4.9.*' \
+    'bleach=3.1.4' \
+    'bokeh=2.0*' \
+    'branca=0.4.0' \
+    'catboost=0.22' \
+    'certifi' \
     'chardet=3.0.4' \
+    'cloudpickle=1.3*' \
+    'conda-forge::blas=*=openblas' \
     'cycler=0.10.0' \
-    'decorator=4.4.0' \
+    'cython=0.29*' \
+    'dask=2.14*' \
+    'decorator=4.4.2' \
+    'dill=0.3*' \
     'entrypoints=0.3' \
-    'gast=0.2.2' \
+    'folium=0.10.1' \
+    'gast=0.3.3' \
+    'h5py=2.*' \
+    'hdf5=1.10*' \
     'html5lib=1.0.1' \
-    'idna=2.8' \
-    'ipykernel=5.1.0' \
-    'ipython=7.4.0' \
+    'idna=2.9' \
+    'ipython=7.13.0' \
     'ipython_genutils=0.2.0' \
-    'jedi=0.13.3' \
-    'Jinja2=2.10.1' \
-    'jsonschema=3.0.1' \
-    'kiwisolver=1.0.1' \
-    'lesscpy=0.13.0' \
-    'lxml=4.3.3' \
+    'ipywidgets=7.5*' \
+    'jedi' \
+    'Jinja2' \
+    'joblib=0.14.1' \
+    'jsonschema=3.2.0' \
+    'Keras=2.3.1' \
+    'Keras-Applications=1.0.8' \
+    'Keras-Preprocessing=1.1.0' \
+    'kiwisolver=1.1.0' \
+    'lightgbm=2.3.1' \
+    'lxml=4.5.0' \
     'MarkupSafe=1.1.1' \
     'mistune=0.8.4' \
-    'Keras=2.2.4' \
-    'Keras-Applications=1.0.7' \
-    'Keras-Preprocessing=1.0.9' \
-    'pandas-datareader=0.7.0' \
+    'matplotlib=3.2.1' \
+    'mlxtend=0.17.2' \
+    'numexpr=2.7*' \
+    'numpy=1.18.1' \
+    'pandas=1.0.1' \
+    'pandas-datareader=0.8.1' \
     'pandocfilters=1.4.2' \
-    'parso=0.4.0' \
-    'ffmpeg=4.1.1' \
-    'pathlib2=2.3.3' \
-    'pexpect=4.7.0' \
+    'parso' \
+    'patsy=0.5*' \
+    'pexpect=4.8.0' \
+    'pathlib2=2.3.5' \
+    'pexpect=4.8.0' \
     'pickleshare=0.7.5' \
-    'pluggy=0.9.0' \
+    'plotly=4.5.4' \
+    'pluggy=0.13.1' \
     'ply=3.11' \
-    'mlxtend=0.10.0' \
+    'prompt_toolkit' \
+    'protobuf=3.11.*' \
     'ptyprocess=0.6.0' \
-    'py=1.8.0' \
-    'Pygments=2.3.1' \
-    'pyparsing=2.4.0' \
-    'python-dateutil=2.8.0' \
-    'pytz=2018.9' \
-    'PyYAML=5.1' \
-    'requests=2.21.0' \
+    'py=1.8.1' \
+    'pyaml' \
+    'Pygments=2.6.1' \
+    'pyparsing=2.4.6' \
+    'python-dateutil=2.8.1' \
+    'pytz=2019.3' \
+    'PyYAML=5.3' \
+    'requests=2.23.0' \
+    'retrying=1.3.3' \
+    'scikit-learn=0.22*' \
+    'scikit-image=0.16*' \
+    'scikit-optimize=0.7*' \
+    'scipy=1.4*' \
+    'seaborn=0.10.0' \
     'Send2Trash=1.5.0' \
     'simplegeneric=0.8.1' \
-    'six=1.12.0' \
-    'termcolor=1.1.0' \
-    'terminado=0.8.2' \
-    'testpath=0.4.2' \
-    'tornado=6.0.2' \
-    'tqdm=4.31.1' \
-    'traitlets=4.3.2' \
-    'urllib3=1.24.1' \
-    'wcwidth=0.1.7' \
-    'webencodings=0.5.1' \
-    'Werkzeug=0.15.2' \
-    'widgetsnbextension=3.4.2' \
-    'wrapt=1.11.1' \
-    'absl-py=0.7.1' \
-    'astor=0.7.1' \
-    'atomicwrites=1.3.0' \
-    'attrs=19.1.0' \
-    'conda-forge::blas=*=openblas' \
-    'ipywidgets=7.4*' \
-    'pandas=0.24*' \
-    'numexpr=2.6*' \
-    'matplotlib=3.0*' \
-    'scipy=1.2*' \
-    'seaborn=0.9*' \
-    'scikit-learn=0.20*' \
-    'scikit-image=0.14*' \
-    'sympy=1.3*' \
-    'cython=0.29*' \
-    'patsy=0.5*' \
-    'statsmodels=0.9*' \
-    'cloudpickle=0.8*' \
-    'dill=0.2*' \
-    'dask=1.1.*' \
-    'numba=0.42*' \
-    'bokeh=1.0*' \
+    'six=1.14.0' \
     'sqlalchemy=1.3*' \
-    'hdf5=1.10*' \
-    'h5py=2.9*' \
+    'statsmodels=0.11*' \
+    'sympy=1.5*' \
+    'termcolor=1.1.0' \
+    'terminado=0.8.3' \
+    'testpath=0.4.4' \
+    'tornado=6.0.4' \
+    'tqdm=4.45*' \
+    'traitlets=4.3.3' \
+    'urllib3=1.25.8' \
     'vincent=0.4.*' \
-    'beautifulsoup4=4.7.*' \
-    'protobuf=3.7.*' \
+    'wcwidth' \
+    'webencodings=0.5.1' \
+    'Werkzeug=1.0.1' \
+    'wheel=0.34.2' \
+    'widgetsnbextension=3.5.1' \
+    'wrapt=1.12.1' \
+    'xgboost=1.0.2' \
+    'xlwt' \
     'xlrd'  && \
     conda remove --quiet --yes --force qt pyqt && \
-    conda clean -tipsy && \
+    conda clean -tipsy 
     # Activate ipywidgets extension in the environment that runs the notebook server
-    jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
+RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     # Also activate ipywidgets extension for JupyterLab
     # Check this URL for most recent compatibilities
     # https://github.com/jupyter-widgets/ipywidgets/tree/master/packages/jupyterlab-manager
-    jupyter labextension install @jupyter-widgets/jupyterlab-manager@^0.38.1 && \
-    jupyter labextension install jupyterlab_bokeh@0.6.3 && \
+	# jupyter labextension install jupyterlab_bokeh && \
+    jupyter labextension install @jupyter-widgets/jupyterlab-manager && \
     npm cache clean --force && \
     rm -rf $CONDA_DIR/share/jupyter/lab/staging && \
     rm -rf /home/$NB_USER/.cache/yarn && \

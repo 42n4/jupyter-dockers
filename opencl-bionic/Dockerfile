@@ -35,11 +35,9 @@ RUN apt-get update \
 # than unsigned object files from an unknown user.
 # Docker run command needs --device=/dev/dri (and maybe --device=/dev/kfd)
 
-#https://www.amd.com/en/support/kb/release-notes/rn-prorad-lin-18-40
-#ARG AMD_DRIVER=amdgpu-pro-18.10-572953.tar.xz
-#ARG AMD_DRIVER=amdgpu-pro-18.30-641594.tar.xz
-#https://drivers.amd.com/drivers/linux/amdgpu-pro-18.40-697810-ubuntu-18.04.tar.xz
-ARG AMD_DRIVER=amdgpu-pro-18.40-697810-ubuntu-18.04.tar.xz
+#https://www.amd.com/en/support/kb/release-notes/rn-prorad-lin-18-50
+#https://drivers.amd.com/drivers/linux/amdgpu-pro-18.50-756341-ubuntu-18.04.tar.xz
+ARG AMD_DRIVER=amdgpu-pro-18.50-756341-ubuntu-18.04.tar.xz
 ARG AMD_DRIVER_URL=https://drivers.amd.com/drivers/linux
 RUN mkdir -p /tmp/opencl-driver-amd
 WORKDIR /tmp/opencl-driver-amd
