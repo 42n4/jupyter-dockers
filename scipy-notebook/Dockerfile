@@ -14,42 +14,6 @@ RUN apt-get update && \
 
 USER $NB_UID
 
-#opencv-python=4.0.0.21
-#prometheus-client=0.3.1
-#tensorboard=1.10.0
-#    'nbconvert=5.4.1' \
-#    'nbformat=4.4.0' \
-#    'pyzmq=17.1.2' \
-#    'tensorflow==2.0.0-alpha0' \
-#    'ipytest=0.5.0' \
-#    'mlxtend=0.15.0.0' \
-#    'more-itertools=7.0.0' \
-#    'Markdown=3.1' \
-#    'grpcio=1.19.0' \
-#    'pytorch-pretrained-bert=0.5.1' \
-#    'pytorch-cpu=1.0.1' \
-#    'pytorch=1.0.1' \
-
-#    'astor=0.8.1' \
-#    'cufflinks' \
-#    'ffmpeg=1.4*' \
-#    'graphviz=0.13.2' \
-#    'ipykernel=5.2.1' \
-#    'lesscpy=0.14.0' \
-#    'mlutils=0.1.0' \
-#    'mpl_toolkits' \
-#    'more_itertools=8.2.0' \
-#    'numba=0.49*' \
-#    'plotly-express' \
-#    'plydata' \
-#    'PyWavelets-1.1.1' \
-
-#  certifi                         2020.4.5.1-py37hc8dfbb8_0 --> 2019.11.28-py37hc8dfbb8_1
-#  jedi                                0.17.0-py37hc8dfbb8_0 --> 0.16.0-py37hc8dfbb8_1
-#  jinja2                                2.11.2-pyh9f0ad1d_0 --> 2.11.1-py_0
-#  parso                                  0.7.0-pyh9f0ad1d_0 --> 0.6.2-py_0
-#  prompt-toolkit                                 3.0.5-py_0 --> 3.0.4-py_0
-#  wcwidth                                0.1.9-pyh9f0ad1d_0 --> 0.1.8-pyh9f0ad1d_1
 
 
 # Install Python 3 packages
@@ -57,6 +21,7 @@ USER $NB_UID
 # use notebook-friendly backends in these images
 RUN conda install --quiet --yes \
     'absl-py=0.9.0' \
+    'astor' \
     'atomicwrites=1.3.0' \
     'attrs=19.3.0' \
     'backcall=0.1.0' \
@@ -69,37 +34,51 @@ RUN conda install --quiet --yes \
     'chardet=3.0.4' \
     'cloudpickle=1.3*' \
     'conda-forge::blas=*=openblas' \
+    'cufflinks-py' \
     'cycler=0.10.0' \
     'cython=0.29*' \
     'dask=2.14*' \
     'decorator=4.4.2' \
     'dill=0.3*' \
     'entrypoints=0.3' \
+    'ffmpeg' \
     'folium=0.10.1' \
     'gast=0.3.3' \
+    'graphviz' \
+    'grpcio' \
     'h5py=2.*' \
     'hdf5=1.10*' \
     'html5lib=1.0.1' \
     'idna=2.9' \
+    'ipykernel' \
+    'ipytest' \
     'ipython=7.13.0' \
     'ipython_genutils=0.2.0' \
     'ipywidgets=7.5*' \
     'jedi' \
     'Jinja2' \
     'joblib=0.14.1' \
-    'jsonschema=3.2.0' \
+    'jsonschema=3.2.0' 
+
+RUN conda install --quiet --yes \
     'Keras=2.3.1' \
     'Keras-Applications=1.0.8' \
     'Keras-Preprocessing=1.1.0' \
     'kiwisolver=1.1.0' \
+    'lesscpy' \
     'lightgbm=2.3.1' \
     'lxml=4.5.0' \
+    'markdown' \
     'MarkupSafe=1.1.1' \
     'mistune=0.8.4' \
     'matplotlib=3.2.1' \
     'mlxtend=0.17.2' \
+    'nbconvert' \
+    'nbformat' \
+    'numba' \
     'numexpr=2.7*' \
     'numpy=1.18.1' \
+    'opencv' \
     'pandas=1.0.1' \
     'pandas-datareader=0.8.1' \
     'pandocfilters=1.4.2' \
@@ -110,6 +89,7 @@ RUN conda install --quiet --yes \
     'pexpect=4.8.0' \
     'pickleshare=0.7.5' \
     'plotly=4.5.4' \
+    'plotly_express' \
     'pluggy=0.13.1' \
     'ply=3.11' \
     'prompt_toolkit' \
@@ -120,8 +100,14 @@ RUN conda install --quiet --yes \
     'Pygments=2.6.1' \
     'pyparsing=2.4.6' \
     'python-dateutil=2.8.1' \
+    'pytorch-gpu' \
+    'pytorch-pretrained-bert' \
     'pytz=2019.3' \
+    'pywavelets' \
     'PyYAML=5.3' \
+    'pyzmq' 
+
+RUN conda install --quiet --yes \
     'requests=2.23.0' \
     'retrying=1.3.3' \
     'scikit-learn=0.22*' \
@@ -135,6 +121,7 @@ RUN conda install --quiet --yes \
     'sqlalchemy=1.3*' \
     'statsmodels=0.11*' \
     'sympy=1.5*' \
+    'tensorflow-gpu' \
     'termcolor=1.1.0' \
     'terminado=0.8.3' \
     'testpath=0.4.4' \
@@ -154,6 +141,13 @@ RUN conda install --quiet --yes \
     'xlrd'  && \
     conda remove --quiet --yes --force qt pyqt && \
     conda clean -tipsy 
+
+#    'mlutils=0.1.0' \
+
+RUN conda install --quiet --yes more-itertools tensorboard prometheus_client proj4
+RUN conda install -c lewington lepmlutils 
+RUN pip install -i https://pypi.anaconda.org/has2k1/simple plydata
+
     # Activate ipywidgets extension in the environment that runs the notebook server
 RUN jupyter nbextension enable --py widgetsnbextension --sys-prefix && \
     # Also activate ipywidgets extension for JupyterLab
