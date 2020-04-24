@@ -22,29 +22,35 @@ docker pull 42n4/all-spark-notebook   #pull my docker (about 7G in tar)
 ```
 git clone https://github.com/pwasiewi/jupyter-dockers
 cd jupyter-dockers/base-notebook
-docker build --rm -t 42n4/base-notebook .
+# docker build --rm -t 42n4/base-notebook .
+docker build --rm -t 42n4/$(basename `pwd`) .
 ```
 #### 2
 ```
 cd ../minimal-notebook
-docker build --rm -t 42n4/minimal-notebook .
+# docker build --rm -t 42n4/minimal-notebook .
+docker build --rm -t 42n4/$(basename `pwd`) .
 ```
 #### 3
 ```
 cd ../scipy-notebook
-docker build --rm -t 42n4/scipy-notebook .
+# docker build --rm -t 42n4/scipy-notebook .
+docker build --rm -t 42n4/$(basename `pwd`) .
 ```
 #### 4
 ```
 cd ../pyspark-notebook
-docker build --rm -t 42n4/pyspark-notebook .
+# docker build --rm -t 42n4/pyspark-notebook .
+docker build --rm -t 42n4/$(basename `pwd`) .
 ```
 #### 5
 ```
 cd ../all-spark-notebook
-docker build --rm -t 42n4/all-spark-notebook .
+# docker build --rm -t 42n4/all-spark-notebook .
+docker build --rm -t 42n4/$(basename `pwd`) .
 docker login                            #docker-hub-user-login and pass to hub.docker.com
-docker push 42n4/all-spark-notebook     #send to docker-hub-user/docker-name
+# docker push 42n4/all-spark-notebook   
+docker push 42n4/$(basename `pwd`)      #send to docker-hub-user/docker-name
 ```
 
 # Jupyter Docker Stacks
