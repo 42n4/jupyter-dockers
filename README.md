@@ -13,9 +13,9 @@ docker run -it --rm -p 8888:8888 -p 4040:4040 -e NB_USER=$(whoami) -e NB_UID=$(i
 docker run -it --rm -p 8888:8888 -p 4040:4040 -e JUPYTER_ENABLE_LAB=yes -e NB_USER=$(whoami) -e NB_UID=$(id -u) -e NB_GID=$(id -g)  -v $(pwd):/home/guest/work 42n4/all-spark-notebook
 
 # Build
-### You can pull my docker with all python packages (about 0.5-1h with a good internet connection)
+### You can pull my docker with all python packages (about 0.5h with a good internet connection)
 ```
-docker pull 42n4/all-spark-notebook   #pull my docker (about 7G in tar)
+docker pull 42n4/all-spark-notebook   #pull my docker (about 14G in tar - all packages needed for machine learning)
 ```
 ### or make it in five steps (about 1 hour on i7) - you can add your packages to Dockerfile:
 #### 1
