@@ -6,7 +6,9 @@
 # Run this modified Jupyter docker with added Python packages and a default user: guest (1001,100)
 #### Examples 
 #### https://github.com/ipython-books/cookbook-2nd-code
-#### https://github.com/SkalskiP/ILearnDeepLearning.py
+#### https://medium.com/@gongsta/how-to-use-pyspark-in-pycharm-ide-2fd8997b1cdd
+#### see my notebooks in this repository
+
 docker run -it --rm -p 8888:8888 -p 4040:4040 -e NB_USER=$(whoami) -e NB_UID=$(id -u) -e NB_GID=$(id -g) -v $(pwd):/home/guest/workspace 42n4/all-spark-notebook
 
 #### Jupyter with the graphical gui
