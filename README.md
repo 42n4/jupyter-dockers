@@ -3,6 +3,8 @@
 [![DockerHub badge](https://images.microbadger.com/badges/version/jupyter/base-notebook.svg)](https://microbadger.com/images/jupyter/base-notebook "Recent tag/version of jupyter/base-notebook")
 [![Binder badget](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyter/docker-stacks/master?filepath=README.ipynb "Launch a jupyter/base-notebook container on mybinder.org")
 
+# If notebooks *.ipynb in github do not load, just paste links to https://nbviewer.jupyter.org/
+
 # Run this modified Jupyter docker with added Python packages and a default user: guest (1001,100)
 #### Examples 
 #### https://github.com/ipython-books/cookbook-2nd-code
