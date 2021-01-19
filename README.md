@@ -3,19 +3,23 @@
 [![DockerHub badge](https://images.microbadger.com/badges/version/jupyter/base-notebook.svg)](https://microbadger.com/images/jupyter/base-notebook "Recent tag/version of jupyter/base-notebook")
 [![Binder badget](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jupyter/docker-stacks/master?filepath=README.ipynb "Launch a jupyter/base-notebook container on mybinder.org")
 
+# If notebooks *.ipynb in github do not load, just paste links to https://nbviewer.jupyter.org/
+
 # Run this modified Jupyter docker with added Python packages and a default user: guest (1001,100)
 #### Examples 
 #### https://github.com/ipython-books/cookbook-2nd-code
-#### https://github.com/SkalskiP/ILearnDeepLearning.py
+#### https://medium.com/@gongsta/how-to-use-pyspark-in-pycharm-ide-2fd8997b1cdd
+#### see my notebooks in this repository
+
 docker run -it --rm -p 8888:8888 -p 4040:4040 -e NB_USER=$(whoami) -e NB_UID=$(id -u) -e NB_GID=$(id -g) -v $(pwd):/home/guest/workspace 42n4/all-spark-notebook
 
 #### Jupyter with the graphical gui
 docker run -it --rm -p 8888:8888 -p 4040:4040 -e JUPYTER_ENABLE_LAB=yes -e NB_USER=$(whoami) -e NB_UID=$(id -u) -e NB_GID=$(id -g)  -v $(pwd):/home/guest/work 42n4/all-spark-notebook
 
 # Build
-### You can pull my docker with all python packages (about 0.5-1h with a good internet connection)
+### You can pull my docker with all python packages (about 0.5h with a good internet connection)
 ```
-docker pull 42n4/all-spark-notebook   #pull my docker (about 7G in tar)
+docker pull 42n4/all-spark-notebook   #pull my docker (about 14G in tar - all packages needed for machine learning)
 ```
 ### or make it in five steps (about 1 hour on i7) - you can add your packages to Dockerfile:
 #### 1
